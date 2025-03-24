@@ -1,6 +1,8 @@
 /* Tue Mar 18 15:07:26 PM IST 2025 */
 /* By: Victor Nammour */
 /*
+difficulty: 16
+level: 25
 allowed: os.Args, fmt.Println, strconv.*, builtin
 https://github.com/01-edu/public/tree/master/subjects/romannumbers
 Write a program called rn. The objective is to convert a number, given as an argument, into a roman number and print it with its roman number calculation.
