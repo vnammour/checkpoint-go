@@ -16,9 +16,9 @@ import (
 )
 
 func main() {
-    zipped := zip("YouuungFellllas")
-    fmt.Println(zipped)
-    fmt.Println(unzip(zipped))
+	zipped := zip("YouuungFellllas")
+	fmt.Println(zipped)
+	fmt.Println(unzip(zipped))
 	fmt.Println(zip("Thee quuick browwn fox juumps over the laaazy dog"))
 	fmt.Println(zip("Helloo Therre!"))
 }

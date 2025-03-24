@@ -48,6 +48,7 @@ func saveandmiss(s string, n int) string {
 	}
 	return string(out)
 }
+
 // naiive way
 func f(s string, n int) string {
 	if n <= 0 || len(s) <= n {
@@ -55,11 +56,11 @@ func f(s string, n int) string {
 	}
 	t := []rune(s)
 	out := make([]rune, 0, len(t)/2+n)
-    for i := 0; i < len(t); i+=2*n {
+	for i := 0; i < len(t); i += 2 * n {
 		// abcdefghi
-        for j := i; j < i+n && j < len(t); j++ {
-		    out = append(out, t[j])
-        }
+		for j := i; j < i+n && j < len(t); j++ {
+			out = append(out, t[j])
+		}
 	}
 	return string(out)
 }

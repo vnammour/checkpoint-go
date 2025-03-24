@@ -25,7 +25,7 @@ func countalpha(s string) int {
 			count--
 		}
 	}
-    return count
+	return count
 }
 
 func isalpha(b byte) bool {

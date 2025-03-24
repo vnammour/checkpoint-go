@@ -10,17 +10,17 @@ If it's an empty string return G followed by a newline \n.
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
-    fmt.Print(printif("abcdefz"))
+	fmt.Print(printif("abcdefz"))
 }
 
 func printif(s string) string {
-    if len(s) >= 3 {
-        return "G\n"
-    } else {
-        return "Invalid Input\n"
-    }
+	if len(s) >= 3 {
+		return "G\n"
+	} else {
+		return "Invalid Input\n"
+	}
 }

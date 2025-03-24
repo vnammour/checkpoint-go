@@ -11,27 +11,27 @@ If the first int is negative, reverse the sign and count the digits.
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
-    fmt.Println(digitlen(100,10))
-    fmt.Println(digitlen(100,2))
-    fmt.Println(digitlen(-100,16))
-    fmt.Println(digitlen(100,-1))
+	fmt.Println(digitlen(100, 10))
+	fmt.Println(digitlen(100, 2))
+	fmt.Println(digitlen(-100, 16))
+	fmt.Println(digitlen(100, -1))
 }
 
-func digitlen(n,d int) int {
-    if !(d>=2 && d<=36) { // if d <2 || d >36
-        return -1
-    }
-    if n < 0 {
-        n *= -1
-    }
-    count := 0
-    for n != 0 {
-        n /= d
-        count++
-    }
-    return count
+func digitlen(n, d int) int {
+	if !(d >= 2 && d <= 36) { // if d <2 || d >36
+		return -1
+	}
+	if n < 0 {
+		n *= -1
+	}
+	count := 0
+	for n != 0 {
+		n /= d
+		count++
+	}
+	return count
 }

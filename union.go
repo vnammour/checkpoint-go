@@ -26,34 +26,34 @@ $
 package main
 
 import (
-    "os"
-    "github.com/01-edu/z01"
+	"github.com/01-edu/z01"
+	"os"
 )
 
 func main() {
-    if len(os.Args) != 3 {
-        z01.PrintRune('\n')
-    } else {
-        union(os.Args[1],os.Args[2])
-    }
+	if len(os.Args) != 3 {
+		z01.PrintRune('\n')
+	} else {
+		union(os.Args[1], os.Args[2])
+	}
 }
 
-func union(s1,s2 string) {
-    m := make(map[rune]bool,max(len(s1),len(s2)))
-    for _,r := range s1 {
-        if seen := m[r]; !seen {
-            m[r] = true
-            z01.PrintRune(r)
-        }
-    }
+func union(s1, s2 string) {
+	m := make(map[rune]bool, max(len(s1), len(s2)))
+	for _, r := range s1 {
+		if seen := m[r]; !seen {
+			m[r] = true
+			z01.PrintRune(r)
+		}
+	}
 
-    for _,r := range s2 {
-        if seen := m[r]; !seen {
-            m[r] = true
-            z01.PrintRune(r)
-        }
-    }
+	for _, r := range s2 {
+		if seen := m[r]; !seen {
+			m[r] = true
+			z01.PrintRune(r)
+		}
+	}
 
-    z01.PrintRune('\n')
+	z01.PrintRune('\n')
 
 }

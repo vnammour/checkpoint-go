@@ -19,36 +19,36 @@ Let's consider the input arr = [1, 2, 3, 4, 5] and the target sum targetSum = 6.
 package main
 
 import (
-    "os"
 	"fmt"
-    "strings"
-    "strconv"
+	"os"
+	"strconv"
+	"strings"
 )
 
 /*
 Input: "[n0,n1,...]" "sum" where n0,n1,... are ints, and sum is an int.
 Output: n0,n1,... as an int slice, sum as an int, an an error string if any.
 */
-func parseinput(input, target string) ([]int,int,string) {
-    sum, err := strconv.Atoi(target)
-    if err != nil {
-        return nil,0,"Invalid target sum."
-    }
-    input = strings.TrimSpace(input)
-    if len(input) <2 || input[0] != '[' || input[len(input)-1] != ']' {
-        return nil,0,"Invalid input."
-    }
-    input = input[1:len(input)-1] // I made sure that len is at least 2
-    temp := strings.Split(input,",")
-    nums := make([]int,0,len(temp))
-    for _,v := range temp {
-        n,err := strconv.Atoi(strings.TrimSpace(v))
-        if err != nil {
-            return nil,0,"Invalid input " + v
-        }
-        nums = append(nums,n)
-    }
-    return nums,sum,""
+func parseinput(input, target string) ([]int, int, string) {
+	sum, err := strconv.Atoi(target)
+	if err != nil {
+		return nil, 0, "Invalid target sum."
+	}
+	input = strings.TrimSpace(input)
+	if len(input) < 2 || input[0] != '[' || input[len(input)-1] != ']' {
+		return nil, 0, "Invalid input."
+	}
+	input = input[1 : len(input)-1] // I made sure that len is at least 2
+	temp := strings.Split(input, ",")
+	nums := make([]int, 0, len(temp))
+	for _, v := range temp {
+		n, err := strconv.Atoi(strings.TrimSpace(v))
+		if err != nil {
+			return nil, 0, "Invalid input " + v
+		}
+		nums = append(nums, n)
+	}
+	return nums, sum, ""
 }
 
 func findpairs(arr []int, sum int) [][]int {
@@ -64,13 +64,13 @@ func findpairs(arr []int, sum int) [][]int {
 }
 
 func main() {
-    if len(os.Args) != 3 {
-        os.Exit(1)
-    }
-    nums, sum, errstr := parseinput(os.Args[1], os.Args[2])
-    if len(errstr) != 0 {
-        fmt.Println(errstr)
-        return
-    }
-    fmt.Println(findpairs(nums,sum))
+	if len(os.Args) != 3 {
+		os.Exit(1)
+	}
+	nums, sum, errstr := parseinput(os.Args[1], os.Args[2])
+	if len(errstr) != 0 {
+		fmt.Println(errstr)
+		return
+	}
+	fmt.Println(findpairs(nums, sum))
 }

@@ -21,7 +21,7 @@ func main() {
 
 /* I consider \' as a letter to allow for words like "don't" */
 func isletter(b byte) bool {
-    return b >= 'a' && b <= 'z' || b >= 'A' && b <= 'Z' || b == '\''
+	return b >= 'a' && b <= 'z' || b >= 'A' && b <= 'Z' || b == '\''
 }
 
 func lastword(s string) string {

@@ -11,13 +11,13 @@ The ASCII graphic characters are any characters intended to be written, printed,
 package main
 
 import (
-	"unicode"
 	"github.com/01-edu/z01"
+	"unicode"
 )
 
 func main() {
 	arr := [10]byte{'h', 'e', 'l', 'l', 'o', 16, 21, '*'}
-    PrintMemory(arr)
+	PrintMemory(arr)
 }
 
 func PrintMemory(arr [10]byte) {
@@ -36,15 +36,15 @@ func PrintMemory(arr [10]byte) {
 			}
 		}
 	}
-    z01.PrintRune('\n')
-    str := string(arr[:len(arr)])
-    for _,r := range str {
-        if unicode.IsGraphic(r) {
-            z01.PrintRune(r)
-        } else {
-            z01.PrintRune('.')
-        }
-    }
+	z01.PrintRune('\n')
+	str := string(arr[:len(arr)])
+	for _, r := range str {
+		if unicode.IsGraphic(r) {
+			z01.PrintRune(r)
+		} else {
+			z01.PrintRune('.')
+		}
+	}
 }
 
 func hexvalue(arr []byte) []byte {

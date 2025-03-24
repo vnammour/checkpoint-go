@@ -9,20 +9,21 @@ Write a function that takes a string as an argument and returns true if the stri
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
-    fmt.Println(checknumber("Hello"))
-    fmt.Println(checknumber("Hello1"))
+	fmt.Println(checknumber("Hello"))
+	fmt.Println(checknumber("Hello1"))
 }
 
 func checknumber(s string) bool {
-    i := 0
-    for ; i < len(s) && !isnumber(s[i]); i++ {}
-    return i < len(s)
+	i := 0
+	for ; i < len(s) && !isnumber(s[i]); i++ {
+	}
+	return i < len(s)
 }
 
 func isnumber(b byte) bool {
-    return b >= '0' && b <= '9'
+	return b >= '0' && b <= '9'
 }

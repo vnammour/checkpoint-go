@@ -32,10 +32,10 @@ func canjump(pos []uint) bool {
 		if i == len(pos)-1 {
 			return true
 		} else if pos[i] == 0 {
-            return false
+			return false
 		} else {
 			i += int(pos[i])
-        }
+		}
 	}
 	return false
 }

@@ -21,9 +21,9 @@ func main() {
 }
 
 func itoa(n int) string {
-    if n == 0 {
-        return "0"
-    }
+	if n == 0 {
+		return "0"
+	}
 	sign := n
 	if sign < 0 {
 		n *= -1

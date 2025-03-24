@@ -8,23 +8,23 @@ Write a function rot14 that returns the string within the parameter transformed 
 package main
 
 import (
-  "fmt"
+	"fmt"
 )
 
 func main() {
-  fmt.Println(rot14("hello World!"))
-  fmt.Println(rot14("Hello! How are You?"))
+	fmt.Println(rot14("hello World!"))
+	fmt.Println(rot14("Hello! How are You?"))
 }
 
 func rot14(s string) string {
-  str := []rune(s)
-  for  i,v := range str {
-    switch {
-    case v >= 'A' && v <= 'Z':
-      str[i] = (v - 'A' + 14) % 26 + 'A'
-    case v >= 'a' && v <= 'z':
-      str[i] = (v - 'a' + 14) % 26 + 'a'
-    }
-  }
-  return string(str)
+	str := []rune(s)
+	for i, v := range str {
+		switch {
+		case v >= 'A' && v <= 'Z':
+			str[i] = (v-'A'+14)%26 + 'A'
+		case v >= 'a' && v <= 'z':
+			str[i] = (v-'a'+14)%26 + 'a'
+		}
+	}
+	return string(str)
 }

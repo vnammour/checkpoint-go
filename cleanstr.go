@@ -14,13 +14,13 @@ If the number of arguments is not 1, or if there are no words to display, the pr
 package main
 
 import (
-	"os"
 	"github.com/01-edu/z01"
+	"os"
 )
 
 func main() {
 	if len(os.Args) != 2 {
-        z01.PrintRune('\n')
+		z01.PrintRune('\n')
 		return
 	}
 	cleanstr(os.Args[1])
@@ -31,10 +31,10 @@ func isspace(b byte) bool {
 }
 
 func cleanstr(s string) {
-    if len(s) == 0 {
-        z01.PrintRune('\n')
-        return
-    }
+	if len(s) == 0 {
+		z01.PrintRune('\n')
+		return
+	}
 	i := 0
 	// trim leading and trailing spaces
 	for ; i < len(s) && isspace(s[i]); i++ {
@@ -57,5 +57,5 @@ func cleanstr(s string) {
 			spaced = false
 		}
 	}
-    z01.PrintRune('\n')
+	z01.PrintRune('\n')
 }

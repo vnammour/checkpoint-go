@@ -13,27 +13,30 @@ If the second argument is not contained in the first one (the string) then the p
 package main
 
 import (
-    "os"
-    "github.com/01-edu/z01"
+	"github.com/01-edu/z01"
+	"os"
 )
 
 func main() {
-    if len(os.Args) != 4 {
-        os.Exit(0)
-    }
-    searchreplace(os.Args[1],os.Args[2], os.Args[3])
+	if len(os.Args) != 4 {
+		os.Exit(0)
+	}
+	searchreplace(os.Args[1], os.Args[2], os.Args[3])
 }
 
-/* I chose to use copy with subslices rather than have f
-converted into a rune slice and use that */
+/*
+	I chose to use copy with subslices rather than have f
+
+converted into a rune slice and use that
+*/
 func searchreplace(str, srch, rep string) {
-    s := []rune(str)
-    to := []rune(rep)
-    for i,_ := range s {
-        if str[i:i+1] == srch {
-            copy(s[i:i+1],to[:])
-        }
-        z01.PrintRune(s[i])
-    }
-   z01.PrintRune('\n')
+	s := []rune(str)
+	to := []rune(rep)
+	for i, _ := range s {
+		if str[i:i+1] == srch {
+			copy(s[i:i+1], to[:])
+		}
+		z01.PrintRune(s[i])
+	}
+	z01.PrintRune('\n')
 }

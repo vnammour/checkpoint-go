@@ -34,7 +34,7 @@ func romannumbers(s string) {
 		1000: "M"}
 	result := make([]string, 0, 10)
 	interm := make([]string, 0, 10)
-    ranks := [4]int{1,10,100,1000}
+	ranks := [4]int{1, 10, 100, 1000}
 	for i := 0; i < len(s); i++ {
 		p := len(s) - i // 4(thousands), 3(hundreds), 2(tens), 1(ones)
 		if !isdigit(s[i]) {
@@ -55,28 +55,28 @@ func romannumbers(s string) {
 		case 1: // ones
 			result = append(result, rn[n])
 		}
-        if p != 4 {
-            switch {
-            case n >=1 && n<=3:
-                for i:= 0; i < n; i++ {
-                    interm = append(interm,rn[ranks[p-1]],"+")
-                }
-            case n == 4:
-                interm = append(interm, "(",rn[5*ranks[p-1]],"-",rn[ranks[p-1]],")","+")
-            case n>=5 && n<=8:
-                interm = append(interm, rn[5*ranks[p-1]])
-                for i:=0; i < n; i++ {
-                    interm = append(interm,"+",rn[ranks[p-1]])
-                }
-            case n == 9:
-                interm = append(interm,"(",rn[ranks[p]],"-",rn[ranks[p-1]],")","+")
-            }
-        }
+		if p != 4 {
+			switch {
+			case n >= 1 && n <= 3:
+				for i := 0; i < n; i++ {
+					interm = append(interm, rn[ranks[p-1]], "+")
+				}
+			case n == 4:
+				interm = append(interm, "(", rn[5*ranks[p-1]], "-", rn[ranks[p-1]], ")", "+")
+			case n >= 5 && n <= 8:
+				interm = append(interm, rn[5*ranks[p-1]])
+				for i := 0; i < n; i++ {
+					interm = append(interm, "+", rn[ranks[p-1]])
+				}
+			case n == 9:
+				interm = append(interm, "(", rn[ranks[p]], "-", rn[ranks[p-1]], ")", "+")
+			}
+		}
 	}
-    b := interm[len(interm)-1]
-    if b == "+" || b == "-" {
-        interm = interm[:len(interm)-1]
-    }
+	b := interm[len(interm)-1]
+	if b == "+" || b == "-" {
+		interm = interm[:len(interm)-1]
+	}
 	for i := 0; i < len(interm); i++ {
 		fmt.Printf("%s", interm[i])
 	}

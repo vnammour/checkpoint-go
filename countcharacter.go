@@ -11,22 +11,22 @@ if the string is empty return 0
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
-    fmt.Println(countchar("Hello World", 'l'))
+	fmt.Println(countchar("Hello World", 'l'))
 	fmt.Println(countchar("5  balloons", 5))
 	fmt.Println(countchar("   ", ' '))
 	fmt.Println(countchar("The 7 deadly sins", '7'))
 }
 
 func countchar(s string, r rune) int {
-    count := 0
-    for _, c := range s {
-        if c == r {
-            count++
-        }
-    }
-    return count
+	count := 0
+	for _, c := range s {
+		if c == r {
+			count++
+		}
+	}
+	return count
 }

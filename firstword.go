@@ -21,15 +21,15 @@ func main() {
 
 /* I consider \' as a letter to allow for words like "don't" */
 func isletter(b byte) bool {
-    return b >= 'a' && b <= 'z' || b >= 'A' && b <= 'Z' || b == '\''
+	return b >= 'a' && b <= 'z' || b >= 'A' && b <= 'Z' || b == '\''
 }
 
 func firstword(s string) string {
-    i := 0
-    for ; i < len(s) && !isletter(s[i]); i++ {
-    }
-    s = s[i:]
-    for i = 0; i < len(s) && isletter(s[i]); i++ {
-    }
-    return s[:i]
+	i := 0
+	for ; i < len(s) && !isletter(s[i]); i++ {
+	}
+	s = s[i:]
+	for i = 0; i < len(s) && isletter(s[i]); i++ {
+	}
+	return s[:i]
 }

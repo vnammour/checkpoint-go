@@ -12,41 +12,44 @@ If there is no argument, the program must print nothing.
 package main
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-    args := os.Args[1:]
-    for _,s := range args {
-        if brackets(s) {
-            fmt.Println("OK!")
-        } else {
-            fmt.Println("Error")
-        }
-    }
+	args := os.Args[1:]
+	for _, s := range args {
+		if brackets(s) {
+			fmt.Println("OK!")
+		} else {
+			fmt.Println("Error")
+		}
+	}
 }
 
 func brackets(s string) bool {
-    stack := make([]byte,0,len(s))
-    for i := 0; i < len(s); i++ {
-        switch s[i] {
-        case '(': stack = append(stack,'(')
-        case ')':
-            if stack[len(stack)-1] == '(' {
-                stack = stack[:len(stack)-1]
-            }
-        case '[': stack = append(stack, '[')
-        case ']':
-            if stack[len(stack)-1] == '[' {
-                stack = stack[:len(stack)-1]
-            }
-        case '{': stack = append(stack, '{')
-        case '}':
-            if stack[len(stack)-1] == '{' {
-                stack = stack[:len(stack)-1]
-            }
-        }
-    }
-    return len(stack) == 0
+	stack := make([]byte, 0, len(s))
+	for i := 0; i < len(s); i++ {
+		switch s[i] {
+		case '(':
+			stack = append(stack, '(')
+		case ')':
+			if stack[len(stack)-1] == '(' {
+				stack = stack[:len(stack)-1]
+			}
+		case '[':
+			stack = append(stack, '[')
+		case ']':
+			if stack[len(stack)-1] == '[' {
+				stack = stack[:len(stack)-1]
+			}
+		case '{':
+			stack = append(stack, '{')
+		case '}':
+			if stack[len(stack)-1] == '{' {
+				stack = stack[:len(stack)-1]
+			}
+		}
+	}
+	return len(stack) == 0
 }

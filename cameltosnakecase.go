@@ -19,7 +19,7 @@ Numbers or punctuation are not allowed in the word anywhere (camelCase1).
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
@@ -29,32 +29,38 @@ func main() {
 	fmt.Println(cameltosnakecase("camelCase"))
 	fmt.Println(cameltosnakecase("CAMELtoSnackCASE"))
 	fmt.Println(cameltosnakecase("camelToSnakeCase"))
-    fmt.Println(cameltosnakecase("heyDay2"))
+	fmt.Println(cameltosnakecase("heyDay2"))
 }
 
 /* Assuming ASCII */
-func isupper(r byte) bool { return r >= 'A' && r <= 'Z' }
-func islower(r byte) bool { return r >= 'a' && r <= 'z' }
+func isupper(r byte) bool  { return r >= 'A' && r <= 'Z' }
+func islower(r byte) bool  { return r >= 'a' && r <= 'z' }
 func isletter(r byte) bool { return isupper(r) || islower(r) }
-func tolower(r byte) byte { return r - 'A' + 'a' }
+func tolower(r byte) byte  { return r - 'A' + 'a' }
 
 func cameltosnakecase(s string) string {
-    if len(s) == 0 { return s }
-    out:= make([]byte,0,len(s)+3) // initial capacity of len(s) (+3 to account for underscores)
-    var prev int = 0
-    for i:=0; i < len(s); i++ {
-        if !isletter(s[i]) { return s }
-        if isupper(s[i]) {
-            if i - prev == 1 {     // two consecutive upper case bytes
-                return s
-            }
-            if i == 0 {
-                out = append(out,tolower(s[i]))
-            } else {
-                out = append(out,'_',tolower(s[i]))
-            }
-            prev = i
-        } else { out = append(out,s[i]) }
-    }
-    return string(out)
+	if len(s) == 0 {
+		return s
+	}
+	out := make([]byte, 0, len(s)+3) // initial capacity of len(s) (+3 to account for underscores)
+	var prev int = 0
+	for i := 0; i < len(s); i++ {
+		if !isletter(s[i]) {
+			return s
+		}
+		if isupper(s[i]) {
+			if i-prev == 1 { // two consecutive upper case bytes
+				return s
+			}
+			if i == 0 {
+				out = append(out, tolower(s[i]))
+			} else {
+				out = append(out, '_', tolower(s[i]))
+			}
+			prev = i
+		} else {
+			out = append(out, s[i])
+		}
+	}
+	return string(out)
 }

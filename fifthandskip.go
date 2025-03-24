@@ -24,19 +24,20 @@ func main() {
 func isspace(b byte) bool {
 	return b == ' ' || b == '\n' || b == '\v' || b == '\t' || b == '\r'
 }
+
 /* allowed: strings.String, which is a reciver of type strings.Builder */
 func fifthandskip(s string) string {
 	const N = 5
-    if len(s) == 0 {
-        return "\n"
-    }
-    if len(s) < N {
-        return "Invalid Input\n"
-    }
-    j := 0
+	if len(s) == 0 {
+		return "\n"
+	}
+	if len(s) < N {
+		return "Invalid Input\n"
+	}
+	j := 0
 	b := &strings.Builder{}
 	b.Grow(len(s))
-    for i:=0; i < len(s); i++ {
+	for i := 0; i < len(s); i++ {
 		if isspace(s[i]) {
 			continue
 		}
@@ -48,7 +49,7 @@ func fifthandskip(s string) string {
 		}
 		b.WriteByte(s[i])
 	}
-    b.WriteByte('\n')
+	b.WriteByte('\n')
 	return b.String()
 }
 
@@ -57,27 +58,27 @@ func fifthandskip2(str string) string {
 	if len(str) == 0 {
 		return "\n"
 	}
-  	if len(str) <5 {
+	if len(str) < 5 {
 		return "Invalid Input\n"
-	} 
+	}
 	s := []byte(str)
-	out := make([]byte,len(s)+1) // +1 for ending newline
-	n, i, j := 0,0,0
-    for i < len(s) {
+	out := make([]byte, len(s)+1) // +1 for ending newline
+	n, i, j := 0, 0, 0
+	for i < len(s) {
 		if isspace(s[i]) {
-            i++
+			i++
 			continue
 		}
-		if (n+1) % 6 == 0 {
+		if (n+1)%6 == 0 {
 			out[j] = ' '
-            i,j = i+1,j+1
+			i, j = i+1, j+1
 			n = 0
 			continue
 		}
 		n++
 		out[j] = s[i]
-        i,j = i+1,j+1
+		i, j = i+1, j+1
 	}
 	out[j] = '\n'
-    return string(out[:j+1])
+	return string(out[:j+1])
 }
