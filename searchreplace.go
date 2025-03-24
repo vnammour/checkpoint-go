@@ -24,17 +24,12 @@ func main() {
 	searchreplace(os.Args[1], os.Args[2], os.Args[3])
 }
 
-/*
-	I chose to use copy with subslices rather than have f
-
-converted into a rune slice and use that
-*/
 func searchreplace(str, srch, rep string) {
 	s := []rune(str)
 	to := []rune(rep)
 	for i, _ := range s {
 		if str[i:i+1] == srch {
-			copy(s[i:i+1], to[:])
+			copy(s[i:i+1], to)
 		}
 		z01.PrintRune(s[i])
 	}
