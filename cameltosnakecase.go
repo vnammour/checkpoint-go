@@ -40,10 +40,7 @@ func isletter(b byte) bool { return isupper(b) || islower(b) }
 func tolower(b byte) byte  { return b - 'A' + 'a' }
 
 func cameltosnakecase(s string) string {
-    if len(s) == 0 {
-        return s
-    }
-    if isupper(s[len(s)-1]) {
+    if len(s) == 0 || isupper(s[len(s)-1]) {
         return s
     }
     out := make([]byte,0,len(s)+2)
