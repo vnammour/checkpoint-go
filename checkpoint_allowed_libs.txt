@@ -1,0 +1,60 @@
+onlya: 					github.com/01-edu/z01.PrintRune, --allow-builtin
+onlyz: 					github.com/01-edu/z01.PrintRune, --allow-builtin
+onlyf: 					github.com/01-edu/z01.PrintRune
+only1: 					github.com/01-edu/z01.PrintRune
+onlyb: 					github.com/01-edu/z01.PrintRune
+rectperimeter: 			none
+countcharacter:			--allow-builtin
+checknumber:			none
+countalpha:				none
+printif:				--allow-builtin
+printifnot:				--allow-builtin
+retainfirsthalf:		--allow-builtin, strings.String
+digitlen:				none
+fishandchips:			none
+cameltosnakecase:		--allow-builtin
+gcd:					--allow-builtin
+hashcode:				--allow-builtin
+lastword:				--allow-builtin
+firstword:				--allow-builtin
+repeatalpha:			--allow-builtin
+searchreplace:			github.com/01-edu/z01.PrintRune, os.Args, --allow-builtin
+findprevprime:			--allow-builtin
+thirdtimeisacharm:		--allow-builtin, strings.String
+printrevcomb:			github.com/01-edu/z01.PrintRune, --no-lit=\d{3}, (for what it means search for no-lit here: https://github.com/01-edu/rc)
+printmemory:			github.com/01-edu/z01.PrintRune, unicode.IsGraphic, --allow-builtin
+weareunique:			--allow-builtin, strings.Contains
+itoa:					len, --allow-builtin
+iscapitalized:			--allow-builtin
+fromto:					strconv.Itoa
+zipstring:				--allow-builtin, strconv.Itoa
+expandstr:				github.com/01-edu/z01.PrintRune, os.*, --allow-builtin
+cleanstr:				os.*, github.com/01-edu/z01.PrintRune, --allow-builtin
+concatalternate:		--allow-builtin
+reversestrcap:			github.com/01-edu/z01.PrintRune, os.*, --allow-builtin
+wdmatch:				os.Args, github.com/01-edu/z01.PrintRune, --allow-builtin
+hiddenp:				os.Args, github.com/01-edu/z01.PrintRune, --allow-builtin
+concatslice:			--allow-builtin
+inter:					github.com/01-edu/z01.PrintRune, os.Args, --allow-builtin
+union:					os.Args, github.com/01-edu/z01.PrintRune, --allow-builtin
+saveandmiss:			--allow-builtin
+chunk:					fmt.Println, --allow-builtin
+addprimesum:			github.com/01-edu/z01.PrintRune, os.*, --allow-builtin
+fprime:					strconv.Atoi, os.Args, fmt.*, --allow-builtin
+canjump:				--allow-builtin
+notdecimal:				--allow-builtin, math.Pow, strconv.Itoa
+concatslice:			--allow-builtin
+fifthandskip:			--allow-builtin, strings.String
+revconcatalternate:		--allow-builtin
+wordflip:				--allow-builtin, strings.Split, strings.TrimSpace
+revwstr:				os.Args, github.com/01-edu/z01.PrintRune, --allow-builtin
+rostring:				os.Args, github.com/01-edu/z01.PrintRune, --allow-builtin
+findpairs:				--allow-builtin, fmt.*, os.Args, strconv.Atoi, strings.*
+options:				os.*, fmt.*, --allow-builtin
+romannumbers:			os.Args, fmt.Println, strconv.*, --allow-builtin
+piglatin:				os.Args, github.com/01-edu/z01.PrintRune, --allow-builtin
+itoabase:				--allow-builtin
+rpncalc:				strconv.Atoi, os.*, fmt.*, strings.Split, --allow-builtin
+brackets:				strconv.Atoi, os.*, fmt.*, strings.Split, --allow-builtin
+grouping:				fmt.Printf, os.Args, --allow-builtin
+brainfuck:				os.*, github.com/01-edu/z01.PrintRune, --allow-builtin
