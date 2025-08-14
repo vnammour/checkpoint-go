@@ -1,4 +1,4 @@
-/* Mon Mar 17 04:31:05 PM IST 2025 */
+/* Wed Aug 13 06:05:49 PM IDT 2025 */
 /* By: Victor Nammour */
 /*
 difficulty: 14
@@ -17,32 +17,28 @@ import (
 )
 
 func main() {
+	s := "hello      world,     again     "
+	fmt.Print(wordflip(s))
 	fmt.Print(wordflip("First second last"))
 	fmt.Print(wordflip(""))
-	fmt.Print(wordflip("       "))
-	fmt.Print(wordflip(" hello   all   of   you!   "))
+	fmt.Print(wordflip("     "))
+	fmt.Print(wordflip(" hello  all  of  you! "))
 }
-
-/*
-	If I used a []string instead of []byte for result, I'll have to loop at end
-
-on the []string to return a string.
-*/
 func wordflip(s string) string {
 	if len(s) == 0 {
-		return "Invalid Output.\n"
+		return "Invalid Output\n"
 	}
-	result := make([]byte, 0, len(s))
-	words := strings.Split(s, " ")
-	for i := len(words) - 1; i >= 0; i-- {
-		if len(words[i]) != 0 {
-			result = append(result, []byte(strings.TrimSpace(words[i]))...)
-			result = append(result, ' ')
+	split := strings.Split(s," ")
+	flipped := make([]byte,0,len(split)*2)
+	for i:= len(split)-1; i >= 0; i-- {
+		s = strings.TrimSpace(split[i])
+		if len(s) != 0 {
+			flipped = append(flipped, s[:]...)
+			flipped = append(flipped, ' ')
 		}
 	}
-	if len(result) != 0 {
-		result = result[:len(result)-1] // remove last space
+	if len(flipped) != 0 {
+		flipped = flipped[:len(flipped)-1] // remove last space
 	}
-	result = append(result, '\n')
-	return string(result)
+	return string(append(flipped, '\n'))
 }
