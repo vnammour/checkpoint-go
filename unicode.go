@@ -47,6 +47,7 @@ func main() {
 	for range s {
 		n++
 	}
+	fmt.Printf("n = %d\n", n)
 	// or we can just call utf8.RuneCountInString(s)
 }
 
